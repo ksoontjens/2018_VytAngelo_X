@@ -14,7 +14,7 @@ import org.havi.ui.HVisible;
 
 public class HelloTVXlet implements Xlet {
 
-    private int sceneWidth = 720;
+    static public int sceneWidth = 720;
             
     static public int sceneHeight = 576;
     

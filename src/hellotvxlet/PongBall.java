@@ -59,6 +59,17 @@ public class PongBall {
                if(speedY == 0)speedY = 5;
            }
        }
+       
+       if(posX > HelloTVXlet.sceneWidth) {
+           speedY = 0;
+           posX = HelloTVXlet.sceneWidth/2;
+           posY = HelloTVXlet.sceneHeight/2;
+        }
+       if(posX < 0) {
+           speedY = 0;
+           posX = HelloTVXlet.sceneWidth/2;
+           posY = HelloTVXlet.sceneHeight/2;
+        }
        reflectOffWall();
     }
     
