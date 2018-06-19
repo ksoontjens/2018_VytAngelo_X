@@ -30,13 +30,15 @@ public class KeyInputs {
         UserEventRepository repository = new UserEventRepository("Movement");
               
         //events toevoegen
-        repository.addAllArrowKeys();
+        repository.addKey(HRcEvent.VK_UP);
+        repository.addKey(HRcEvent.VK_DOWN);
         repository.addKey(HRcEvent.VK_W);
         repository.addKey(HRcEvent.VK_Z);
         repository.addKey(HRcEvent.VK_S);
         
         //Listener
         UserEventListener listener = new UserEventListener() {
+            //Opvangen van de Key events
             public void userEventReceived(UserEvent e) 
             {
                 if(e.getType() == HRcEvent.KEY_PRESSED){applyKeyInput(e, true);}
@@ -48,12 +50,12 @@ public class KeyInputs {
         EventManager.getInstance().addUserEventListener(listener, repository);   
     }
     
-    private void applyKeyInput(UserEvent e, boolean isKeyDown){
+    private void applyKeyInput(UserEvent e, boolean isPressed){
         switch(e.getCode()){
-            case HRcEvent.VK_Z: up_player1 = isKeyDown;  break;
-            case HRcEvent.VK_S: down_player1 = isKeyDown; break;
-            case HRcEvent.VK_UP: up_player2 = isKeyDown; break;
-            case HRcEvent.VK_DOWN: down_player2 = isKeyDown; break;
+            case HRcEvent.VK_Z: up_player1 = isPressed; System.out.println("VK_Z is pressed"); break;
+            case HRcEvent.VK_S: down_player1 = isPressed; System.out.println("VK_S is pressed"); break;
+            case HRcEvent.VK_UP: up_player2 = isPressed; System.out.println("VK_UP is pressed"); break;
+            case HRcEvent.VK_DOWN: down_player2 = isPressed; System.out.println("VK_DOWN is pressed"); break;
         }
     }
 }

@@ -16,10 +16,12 @@ public class HelloTVXlet implements Xlet {
 
     private int sceneWidth = 720;
             
-    private int sceneHeight = 576;
+    static public int sceneHeight = 576;
     
-    public Player player1;
-    public Player player2;
+    static public Player player1;
+    static public Player player2;
+    
+    public PongBall pongBall;
     
     private HScene scene;
     
@@ -43,6 +45,7 @@ public class HelloTVXlet implements Xlet {
 
                 player1.paint(graphics);
                 player2.paint(graphics);
+                pongBall.paint(graphics);
             }
         };
         
@@ -53,6 +56,8 @@ public class HelloTVXlet implements Xlet {
        
         player1 = new Player(40, sceneHeight/2);
         player2 = new Player(sceneWidth - 40, sceneHeight/2);
+        
+        pongBall = new PongBall(sceneWidth/2, sceneHeight/2);
         
         keyInputs = new KeyInputs();
                   
@@ -69,12 +74,13 @@ public class HelloTVXlet implements Xlet {
         while(true){
             long currentTime = System.currentTimeMillis();
                        
-            //draws frame after update
             scene.paint(scene.getGraphics());
             scene.validate();
             
             player1.update(KeyInputs.up_player1, KeyInputs.down_player1);
             player2.update(KeyInputs.up_player2, KeyInputs.down_player2);
+            
+            pongBall.update(true);
             
             try { Thread.sleep(1000 / 30 - (System.currentTimeMillis() - currentTime)); }
             catch (InterruptedException exception) { exception.printStackTrace(); }

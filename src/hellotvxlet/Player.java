@@ -3,6 +3,7 @@ package hellotvxlet;
 import java.awt.Point;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Rectangle;
 
 /**
  *
@@ -14,7 +15,7 @@ public class Player {
     private int width = 25;
     private int height = 125;
     
-    public Player(int x, int y){ pos = new Point(x, y);}
+    public Player(int x, int y){ pos = new Point(x, y); }
     
     public void paint(Graphics graphics){
         graphics.setColor(Color.WHITE);
@@ -26,5 +27,12 @@ public class Player {
     public void update(boolean up, boolean down){
         if(up){ pos.y -= 20;}
         else if(down){pos.y += 20;}
+        
+        if(pos.y < (height/2) ) pos.y = height/2; // top of the screen
+        if(pos.y > (HelloTVXlet.sceneHeight - height/2) ) pos.y = HelloTVXlet.sceneHeight- height/2; // bottom of the screen
+    }
+    
+    public Rectangle getHitbox(){
+        return new Rectangle(pos.x - width/2, pos.y - height/2, width, height);
     }
 }
