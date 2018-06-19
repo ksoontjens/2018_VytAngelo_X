@@ -11,18 +11,20 @@ import java.awt.Color;
 public class Player {
 
     private Point pos;
+    private int width = 25;
+    private int height = 125;
     
-    public Player(int xPos, int yPos){
-        pos = new Point(xPos, yPos);
-    }
+    public Player(int x, int y){ pos = new Point(x, y);}
     
     public void paint(Graphics graphics){
         graphics.setColor(Color.WHITE);
-        graphics.fillRect(pos.x - 25/2, pos.y - 80/2, 25, 80);
+        graphics.fillRect(pos.x - width/2, pos.y - height/2, width, height);
     }
         
-    public void setPosition(int yPos){
-        pos.y = yPos;
-    }
+    public void setPosition(int y){pos.y = y;}
     
+    public void update(boolean up, boolean down){
+        if(up){ pos.y -= 20;}
+        else if(down){pos.y += 20;}
+    }
 }
