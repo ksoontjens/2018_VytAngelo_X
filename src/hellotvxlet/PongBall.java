@@ -15,7 +15,7 @@ import java.awt.Rectangle;
  */
 public class PongBall {
     //private Point pos;
-    private int posX;
+    public int posX;
     private int posY;
     private int speedY = 0;
     private int speedGeneral = 10;
@@ -35,8 +35,6 @@ public class PongBall {
         graphics.setColor(Color.WHITE);
         graphics.fillOval(posX - width/2, posY - width/2, width, width);
     }
-    
-    //public void setPosition(int y){pos.y = y;}
     
     private boolean hitboxCollision(Player player){
         Rectangle playerHitBox = player.getHitbox();
@@ -62,19 +60,23 @@ public class PongBall {
        
        if(posX > HelloTVXlet.sceneWidth) {
            speedY = 0;
+           normalDirection *= turnDirectionAround;
            posX = HelloTVXlet.sceneWidth/2;
            posY = HelloTVXlet.sceneHeight/2;
+           HelloTVXlet.player1Points++; // adds score
         }
        if(posX < 0) {
            speedY = 0;
+           normalDirection *= turnDirectionAround;
            posX = HelloTVXlet.sceneWidth/2;
            posY = HelloTVXlet.sceneHeight/2;
+           HelloTVXlet.player2Points++; // adds score
         }
        reflectOffWall();
     }
     
    private void reflectOffWall(){
-        if(posY - width/2 <= 0 || posY + width/2 >= HelloTVXlet.sceneHeight){ speedY *= turnDirectionAround;}
+        if((posY - width/2 < 0) || (posY + width/2 > HelloTVXlet.sceneHeight)){ speedY *= turnDirectionAround;}
     }
         
 }

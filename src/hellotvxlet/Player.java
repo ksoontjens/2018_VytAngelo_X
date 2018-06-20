@@ -17,8 +17,8 @@ public class Player {
     
     public Player(int x, int y){ pos = new Point(x, y); }
     
-    public void paint(Graphics graphics){
-        graphics.setColor(Color.WHITE);
+    public void paint(Graphics graphics, Color color){
+        graphics.setColor(color);
         graphics.fillRect(pos.x - width/2, pos.y - height/2, width, height);
     }
         

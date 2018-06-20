@@ -1,16 +1,16 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: ffMh/XEgitauWlnoQW89bMi3jHM=
+SHA1-Digest-Manifest: 8u9n7KJP9AfR7WJ3HZL3MrgK0P4=
 
 Name: hellotvxlet/HelloTVXlet.class
-SHA1-Digest: LUfHbjSF5tMwGK863uNG0zNZwOI=
+SHA1-Digest: UiMv6gWOF4xt+sa6YWgmUFBGntU=
 
 Name: hellotvxlet/HelloTVXlet$1.class
-SHA1-Digest: xo1tkieMvFFFhbDuT5n9Sl4yYuY=
+SHA1-Digest: v7JzBc00ZP3IP5F5eczUex+ZVwE=
 
 Name: hellotvxlet/PongBall.class
-SHA1-Digest: uEc9eM5FrD3/sDwC1v+7TdsQdDk=
+SHA1-Digest: nGb/cdAvyXZM0Bx3sJYYjs9mbfI=
 
 Name: hellotvxlet/KeyInputs$1.class
 SHA1-Digest: 6agjvoSBneNAqDbqrxyLZx3T/jc=
@@ -22,7 +22,7 @@ Name: hellotvxlet/HBackGroundDevice.class
 SHA1-Digest: al6BBInavSr4hzmcqtHhDVJNIY8=
 
 Name: hellotvxlet/Player.class
-SHA1-Digest: EuSzIyEhiNC6eroa+TzzUzvogqc=
+SHA1-Digest: fBuccAHzRsA5kCXonE87q9zS/2M=
 
 Name: hellotvxlet/KeyInputs.class
 SHA1-Digest: IfRJxJj2R2kVzPhVVNlwXlBnvAo=
